@@ -1,0 +1,30 @@
+{
+  "name": "Genre",
+  "fields": [
+    {
+      "fieldName": "genreName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "titleGenre",
+      "otherEntityRelationshipName": "genre",
+      "relationshipName": "titleGenre"
+    }
+  ],
+  "entityTableName": "genre",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "angularJSSuffix": "graphqlDgs",
+  "changelogDate": "20211014163338"
+}

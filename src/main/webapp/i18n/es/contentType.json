@@ -1,0 +1,24 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "contentType": {
+      "home": {
+        "title": "Content Types",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Content Type",
+        "createOrEditLabel": "Crear o editar Content Type",
+        "notFound": "Ningún Content Types encontrado"
+      },
+      "created": "Un nuevo Content Type ha sido creado con el identificador {{ param }}",
+      "updated": "Un Content Type ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Content Type ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Content Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Content Type"
+      },
+      "id": "ID",
+      "contentTypeName": "Content Type Name"
+    }
+  }
+}

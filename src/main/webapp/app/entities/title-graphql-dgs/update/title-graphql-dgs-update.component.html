@@ -1,0 +1,145 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-title-graphql-dgs-heading"
+        data-cy="TitleCreateUpdateHeading"
+        jhiTranslate="jhipsterGraphqlDgsApp.title.home.createOrEditLabel"
+      >
+        Create or edit a Title
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.primaryTitle" for="field_primaryTitle"
+            >Primary Title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="primaryTitle"
+            id="field_primaryTitle"
+            data-cy="primaryTitle"
+            formControlName="primaryTitle"
+          />
+          <div
+            *ngIf="editForm.get('primaryTitle')!.invalid && (editForm.get('primaryTitle')!.dirty || editForm.get('primaryTitle')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('primaryTitle')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('primaryTitle')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 500 }"
+            >
+              This field cannot be longer than 500 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.originalTitle" for="field_originalTitle"
+            >Original Title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="originalTitle"
+            id="field_originalTitle"
+            data-cy="originalTitle"
+            formControlName="originalTitle"
+          />
+          <div
+            *ngIf="
+              editForm.get('originalTitle')!.invalid && (editForm.get('originalTitle')!.dirty || editForm.get('originalTitle')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('originalTitle')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 500 }"
+            >
+              This field cannot be longer than 500 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.isAdult" for="field_isAdult">Is Adult</label>
+          <input type="checkbox" class="form-check" name="isAdult" id="field_isAdult" data-cy="isAdult" formControlName="isAdult" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.startYear" for="field_startYear">Start Year</label>
+          <input type="number" class="form-control" name="startYear" id="field_startYear" data-cy="startYear" formControlName="startYear" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.endYear" for="field_endYear">End Year</label>
+          <input type="number" class="form-control" name="endYear" id="field_endYear" data-cy="endYear" formControlName="endYear" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.runtimeMinutes" for="field_runtimeMinutes"
+            >Runtime Minutes</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="runtimeMinutes"
+            id="field_runtimeMinutes"
+            data-cy="runtimeMinutes"
+            formControlName="runtimeMinutes"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.title.contentType" for="field_contentType"
+            >Content Type</label
+          >
+          <select class="form-control" id="field_contentType" data-cy="contentType" name="contentType" formControlName="contentType">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                contentTypeOption.id === editForm.get('contentType')!.value?.id ? editForm.get('contentType')!.value : contentTypeOption
+              "
+              *ngFor="let contentTypeOption of contentTypesCollection; trackBy: trackContentTypeGraphqlDgsById"
+            >
+              {{ contentTypeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

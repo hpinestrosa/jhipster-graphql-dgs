@@ -1,0 +1,26 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titleGenre": {
+      "home": {
+        "title": "Title Genres",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Title Genre",
+        "createOrEditLabel": "Create or edit a Title Genre",
+        "notFound": "No Title Genres found"
+      },
+      "created": "A new Title Genre is created with identifier {{ param }}",
+      "updated": "A Title Genre is updated with identifier {{ param }}",
+      "deleted": "A Title Genre is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Title Genre {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Genre"
+      },
+      "id": "ID",
+      "ord": "Ord",
+      "genre": "Genre",
+      "title": "Title"
+    }
+  }
+}

@@ -44,7 +44,26 @@
     "clientTheme": "none",
     "clientThemeVariant": "",
     "reactive": false,
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": [
+      "Category",
+      "ContentType",
+      "Genre",
+      "Language",
+      "Region",
+      "Role",
+      "TitleType",
+      "Title",
+      "Talent",
+      "TalentRole",
+      "TalentTitle",
+      "TitleAka",
+      "TitleGenre",
+      "TitlePrincipal",
+      "TitleAkaTitleType",
+      "TitleEpisode"
+    ],
+    "lastLiquibaseTimestamp": 1634229231000
   },
   "git-provider": "GitHub",
   "git-company": "hpinestrosa",

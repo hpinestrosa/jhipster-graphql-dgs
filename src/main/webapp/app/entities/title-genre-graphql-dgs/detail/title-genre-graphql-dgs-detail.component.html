@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="titleGenre">
+      <h2 data-cy="titleGenreDetailsHeading"><span jhiTranslate="jhipsterGraphqlDgsApp.titleGenre.detail.title">Title Genre</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ titleGenre.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleGenre.ord">Ord</span></dt>
+        <dd>
+          <span>{{ titleGenre.ord }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleGenre.genre">Genre</span></dt>
+        <dd>
+          <div *ngIf="titleGenre.genre">
+            <a [routerLink]="['/genre-graphql-dgs', titleGenre.genre?.id, 'view']">{{ titleGenre.genre?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleGenre.title">Title</span></dt>
+        <dd>
+          <div *ngIf="titleGenre.title">
+            <a [routerLink]="['/title-graphql-dgs', titleGenre.title?.id, 'view']">{{ titleGenre.title?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/title-genre-graphql-dgs', titleGenre.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

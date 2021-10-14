@@ -1,0 +1,26 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titlePrincipal": {
+      "home": {
+        "title": "Title Principals",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Title Principal",
+        "createOrEditLabel": "Crear o editar Title Principal",
+        "notFound": "Ningún Title Principals encontrado"
+      },
+      "created": "Un nuevo Title Principal ha sido creado con el identificador {{ param }}",
+      "updated": "Un Title Principal ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Title Principal ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Title Principal {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Principal"
+      },
+      "id": "ID",
+      "category": "Category",
+      "job": "Job",
+      "roleNames": "Role Names"
+    }
+  }
+}

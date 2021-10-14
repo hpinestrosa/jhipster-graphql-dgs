@@ -1,0 +1,108 @@
+<div>
+  <h2 id="page-heading" data-cy="TitleHeading">
+    <span jhiTranslate="jhipsterGraphqlDgsApp.title.home.title">Titles</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterGraphqlDgsApp.title.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-title-graphql-dgs"
+        [routerLink]="['/title-graphql-dgs/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterGraphqlDgsApp.title.home.createLabel"> Create a new Title </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="titles?.length === 0">
+    <span jhiTranslate="jhipsterGraphqlDgsApp.title.home.notFound">No titles found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="titles && titles.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="reset()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="primaryTitle">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.primaryTitle">Primary Title</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="originalTitle">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.originalTitle">Original Title</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isAdult">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.isAdult">Is Adult</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="startYear">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.startYear">Start Year</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="endYear">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.endYear">End Year</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="runtimeMinutes">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.runtimeMinutes">Runtime Minutes</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="contentType.id">
+            <span jhiTranslate="jhipsterGraphqlDgsApp.title.contentType">Content Type</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let title of titles; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/title-graphql-dgs', title.id, 'view']">{{ title.id }}</a>
+          </td>
+          <td>{{ title.primaryTitle }}</td>
+          <td>{{ title.originalTitle }}</td>
+          <td>{{ title.isAdult }}</td>
+          <td>{{ title.startYear }}</td>
+          <td>{{ title.endYear }}</td>
+          <td>{{ title.runtimeMinutes }}</td>
+          <td>
+            <div *ngIf="title.contentType">
+              <a [routerLink]="['/content-type-graphql-dgs', title.contentType?.id, 'view']">{{ title.contentType?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/title-graphql-dgs', title.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/title-graphql-dgs', title.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(title)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

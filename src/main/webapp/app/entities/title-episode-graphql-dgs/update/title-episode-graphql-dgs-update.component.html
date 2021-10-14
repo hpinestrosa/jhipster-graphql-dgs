@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-title-episode-graphql-dgs-heading"
+        data-cy="TitleEpisodeCreateUpdateHeading"
+        jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.home.createOrEditLabel"
+      >
+        Create or edit a Title Episode
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.parentTitle" for="field_parentTitle"
+            >Parent Title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="parentTitle"
+            id="field_parentTitle"
+            data-cy="parentTitle"
+            formControlName="parentTitle"
+          />
+          <div *ngIf="editForm.get('parentTitle')!.invalid && (editForm.get('parentTitle')!.dirty || editForm.get('parentTitle')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('parentTitle')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.seasonNumber" for="field_seasonNumber"
+            >Season Number</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="seasonNumber"
+            id="field_seasonNumber"
+            data-cy="seasonNumber"
+            formControlName="seasonNumber"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.episodeNumber" for="field_episodeNumber"
+            >Episode Number</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="episodeNumber"
+            id="field_episodeNumber"
+            data-cy="episodeNumber"
+            formControlName="episodeNumber"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

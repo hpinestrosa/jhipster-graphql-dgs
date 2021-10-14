@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="title">
+      <h2 data-cy="titleDetailsHeading"><span jhiTranslate="jhipsterGraphqlDgsApp.title.detail.title">Title</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ title.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.primaryTitle">Primary Title</span></dt>
+        <dd>
+          <span>{{ title.primaryTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.originalTitle">Original Title</span></dt>
+        <dd>
+          <span>{{ title.originalTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.isAdult">Is Adult</span></dt>
+        <dd>
+          <span>{{ title.isAdult }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.startYear">Start Year</span></dt>
+        <dd>
+          <span>{{ title.startYear }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.endYear">End Year</span></dt>
+        <dd>
+          <span>{{ title.endYear }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.runtimeMinutes">Runtime Minutes</span></dt>
+        <dd>
+          <span>{{ title.runtimeMinutes }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.title.contentType">Content Type</span></dt>
+        <dd>
+          <div *ngIf="title.contentType">
+            <a [routerLink]="['/content-type-graphql-dgs', title.contentType?.id, 'view']">{{ title.contentType?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/title-graphql-dgs', title.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
