@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="titleEpisode">
+      <h2 data-cy="titleEpisodeDetailsHeading">
+        <span jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.detail.title">Title Episode</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ titleEpisode.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.parentTitle">Parent Title</span></dt>
+        <dd>
+          <span>{{ titleEpisode.parentTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.seasonNumber">Season Number</span></dt>
+        <dd>
+          <span>{{ titleEpisode.seasonNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titleEpisode.episodeNumber">Episode Number</span></dt>
+        <dd>
+          <span>{{ titleEpisode.episodeNumber }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/title-episode-graphql-dgs', titleEpisode.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

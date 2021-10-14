@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
+        "categoryGraphqlDgs": "Category",
+        "contentTypeGraphqlDgs": "Content Type",
+        "genreGraphqlDgs": "Genre",
+        "languageGraphqlDgs": "Language",
+        "regionGraphqlDgs": "Region",
+        "roleGraphqlDgs": "Role",
+        "titleTypeGraphqlDgs": "Title Type",
+        "titleGraphqlDgs": "Title",
+        "talentGraphqlDgs": "Talent",
+        "talentRoleGraphqlDgs": "Talent Role",
+        "talentTitleGraphqlDgs": "Talent Title",
+        "titleAkaGraphqlDgs": "Title Aka",
+        "titleGenreGraphqlDgs": "Title Genre",
+        "titlePrincipalGraphqlDgs": "Title Principal",
+        "titleAkaTitleTypeGraphqlDgs": "Title Aka Title Type",
+        "titleEpisodeGraphqlDgs": "Title Episode",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

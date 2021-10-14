@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="talent">
+      <h2 data-cy="talentDetailsHeading"><span jhiTranslate="jhipsterGraphqlDgsApp.talent.detail.title">Talent</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ talent.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.talent.talentName">Talent Name</span></dt>
+        <dd>
+          <span>{{ talent.talentName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.talent.birthYear">Birth Year</span></dt>
+        <dd>
+          <span>{{ talent.birthYear }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.talent.deathYear">Death Year</span></dt>
+        <dd>
+          <span>{{ talent.deathYear }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/talent-graphql-dgs', talent.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

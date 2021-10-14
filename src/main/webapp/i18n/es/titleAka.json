@@ -1,0 +1,28 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titleAka": {
+      "home": {
+        "title": "Title Akas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Title Aka",
+        "createOrEditLabel": "Crear o editar Title Aka",
+        "notFound": "Ningún Title Akas encontrado"
+      },
+      "created": "Un nuevo Title Aka ha sido creado con el identificador {{ param }}",
+      "updated": "Un Title Aka ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Title Aka ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Title Aka {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Aka"
+      },
+      "id": "ID",
+      "akaTitle": "Aka Title",
+      "additionalAttrs": "Additional Attrs",
+      "isOriginalTitle": "Is Original Title",
+      "region": "Region",
+      "language": "Language"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titleAka": {
+      "home": {
+        "title": "Title Akas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Title Aka",
+        "createOrEditLabel": "Create or edit a Title Aka",
+        "notFound": "No Title Akas found"
+      },
+      "created": "A new Title Aka is created with identifier {{ param }}",
+      "updated": "A Title Aka is updated with identifier {{ param }}",
+      "deleted": "A Title Aka is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Title Aka {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Aka"
+      },
+      "id": "ID",
+      "akaTitle": "Aka Title",
+      "additionalAttrs": "Additional Attrs",
+      "isOriginalTitle": "Is Original Title",
+      "region": "Region",
+      "language": "Language"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "TalentRole",
+  "fields": [
+    {
+      "fieldName": "ord",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "talentRole",
+      "relationshipName": "role"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "talent",
+      "otherEntityRelationshipName": "talentRole",
+      "relationshipName": "talent"
+    }
+  ],
+  "entityTableName": "talent_role",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "angularJSSuffix": "graphqlDgs",
+  "changelogDate": "20211014163345"
+}

@@ -1,0 +1,31 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "title": {
+      "home": {
+        "title": "Titles",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Title",
+        "createOrEditLabel": "Crear o editar Title",
+        "notFound": "Ningún Titles encontrado"
+      },
+      "created": "Un nuevo Title ha sido creado con el identificador {{ param }}",
+      "updated": "Un Title ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Title ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Title {{ id }}?"
+      },
+      "detail": {
+        "title": "Title"
+      },
+      "id": "ID",
+      "primaryTitle": "Primary Title",
+      "originalTitle": "Original Title",
+      "isAdult": "Is Adult",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "runtimeMinutes": "Runtime Minutes",
+      "contentType": "Content Type",
+      "titleGenre": "Title Genre"
+    }
+  }
+}

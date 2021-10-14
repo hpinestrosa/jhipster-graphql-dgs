@@ -1,0 +1,26 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titleEpisode": {
+      "home": {
+        "title": "Title Episodes",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Title Episode",
+        "createOrEditLabel": "Crear o editar Title Episode",
+        "notFound": "Ningún Title Episodes encontrado"
+      },
+      "created": "Un nuevo Title Episode ha sido creado con el identificador {{ param }}",
+      "updated": "Un Title Episode ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Title Episode ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Title Episode {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Episode"
+      },
+      "id": "ID",
+      "parentTitle": "Parent Title",
+      "seasonNumber": "Season Number",
+      "episodeNumber": "Episode Number"
+    }
+  }
+}

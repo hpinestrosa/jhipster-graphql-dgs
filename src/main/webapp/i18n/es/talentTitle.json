@@ -1,0 +1,25 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "talentTitle": {
+      "home": {
+        "title": "Talent Titles",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Talent Title",
+        "createOrEditLabel": "Crear o editar Talent Title",
+        "notFound": "Ningún Talent Titles encontrado"
+      },
+      "created": "Un nuevo Talent Title ha sido creado con el identificador {{ param }}",
+      "updated": "Un Talent Title ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Talent Title ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Talent Title {{ id }}?"
+      },
+      "detail": {
+        "title": "Talent Title"
+      },
+      "id": "ID",
+      "title": "Title",
+      "talent": "Talent"
+    }
+  }
+}

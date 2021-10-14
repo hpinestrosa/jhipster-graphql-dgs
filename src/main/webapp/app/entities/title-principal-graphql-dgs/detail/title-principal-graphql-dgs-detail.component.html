@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="titlePrincipal">
+      <h2 data-cy="titlePrincipalDetailsHeading">
+        <span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.detail.title">Title Principal</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ titlePrincipal.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.category">Category</span></dt>
+        <dd>
+          <span>{{ titlePrincipal.category }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.job">Job</span></dt>
+        <dd>
+          <span>{{ titlePrincipal.job }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.roleNames">Role Names</span></dt>
+        <dd>
+          <span>{{ titlePrincipal.roleNames }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/title-principal-graphql-dgs', titlePrincipal.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

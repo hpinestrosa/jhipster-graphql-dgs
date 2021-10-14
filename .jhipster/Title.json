@@ -1,0 +1,59 @@
+{
+  "name": "Title",
+  "fields": [
+    {
+      "fieldName": "primaryTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "originalTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "isAdult",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "startYear",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "endYear",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "runtimeMinutes",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contentType",
+      "otherEntityRelationshipName": "title",
+      "relationshipName": "contentType",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "titleGenre",
+      "otherEntityRelationshipName": "title",
+      "relationshipName": "titleGenre"
+    }
+  ],
+  "entityTableName": "title",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "angularJSSuffix": "graphqlDgs",
+  "changelogDate": "20211014163343"
+}

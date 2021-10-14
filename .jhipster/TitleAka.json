@@ -1,0 +1,48 @@
+{
+  "name": "TitleAka",
+  "fields": [
+    {
+      "fieldName": "akaTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "additionalAttrs",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "isOriginalTitle",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "region",
+      "otherEntityRelationshipName": "titleAka",
+      "relationshipName": "region",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "language",
+      "otherEntityRelationshipName": "titleAka",
+      "relationshipName": "language",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "title_aka",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "angularJSSuffix": "graphqlDgs",
+  "changelogDate": "20211014163347"
+}

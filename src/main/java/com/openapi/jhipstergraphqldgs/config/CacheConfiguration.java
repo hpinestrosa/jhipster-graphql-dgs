@@ -48,6 +48,26 @@ public class CacheConfiguration {
             createCache(cm, com.openapi.jhipstergraphqldgs.domain.User.class.getName());
             createCache(cm, com.openapi.jhipstergraphqldgs.domain.Authority.class.getName());
             createCache(cm, com.openapi.jhipstergraphqldgs.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Category.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.ContentType.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Genre.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Genre.class.getName() + ".titleGenres");
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Language.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Region.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Role.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Role.class.getName() + ".talentRoles");
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitleType.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Title.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Title.class.getName() + ".titleGenres");
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Talent.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.Talent.class.getName() + ".talentRoles");
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TalentRole.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TalentTitle.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitleAka.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitleGenre.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitlePrincipal.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitleAkaTitleType.class.getName());
+            createCache(cm, com.openapi.jhipstergraphqldgs.domain.TitleEpisode.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

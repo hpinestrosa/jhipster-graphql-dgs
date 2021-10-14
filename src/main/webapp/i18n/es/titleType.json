@@ -1,0 +1,24 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "titleType": {
+      "home": {
+        "title": "Title Types",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Title Type",
+        "createOrEditLabel": "Crear o editar Title Type",
+        "notFound": "Ningún Title Types encontrado"
+      },
+      "created": "Un nuevo Title Type ha sido creado con el identificador {{ param }}",
+      "updated": "Un Title Type ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Title Type ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Title Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Type"
+      },
+      "id": "ID",
+      "titleTypeName": "Title Type Name"
+    }
+  }
+}

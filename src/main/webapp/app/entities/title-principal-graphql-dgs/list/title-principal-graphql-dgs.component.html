@@ -1,0 +1,82 @@
+<div>
+  <h2 id="page-heading" data-cy="TitlePrincipalHeading">
+    <span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.home.title">Title Principals</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-title-principal-graphql-dgs"
+        [routerLink]="['/title-principal-graphql-dgs/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.home.createLabel"> Create a new Title Principal </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="titlePrincipals?.length === 0">
+    <span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.home.notFound">No titlePrincipals found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="titlePrincipals && titlePrincipals.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.category">Category</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.job">Job</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterGraphqlDgsApp.titlePrincipal.roleNames">Role Names</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let titlePrincipal of titlePrincipals; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/title-principal-graphql-dgs', titlePrincipal.id, 'view']">{{ titlePrincipal.id }}</a>
+          </td>
+          <td>{{ titlePrincipal.category }}</td>
+          <td>{{ titlePrincipal.job }}</td>
+          <td>{{ titlePrincipal.roleNames }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/title-principal-graphql-dgs', titlePrincipal.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/title-principal-graphql-dgs', titlePrincipal.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(titlePrincipal)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

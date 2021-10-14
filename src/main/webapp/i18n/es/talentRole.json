@@ -1,0 +1,26 @@
+{
+  "jhipsterGraphqlDgsApp": {
+    "talentRole": {
+      "home": {
+        "title": "Talent Roles",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Talent Role",
+        "createOrEditLabel": "Crear o editar Talent Role",
+        "notFound": "Ningún Talent Roles encontrado"
+      },
+      "created": "Un nuevo Talent Role ha sido creado con el identificador {{ param }}",
+      "updated": "Un Talent Role ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Talent Role ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Talent Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Talent Role"
+      },
+      "id": "ID",
+      "ord": "Ord",
+      "role": "Role",
+      "talent": "Talent"
+    }
+  }
+}

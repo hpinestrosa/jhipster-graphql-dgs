@@ -1,0 +1,24 @@
+{
+  "name": "TitleAkaTitleType",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "titleType",
+      "otherEntityRelationshipName": "titleAkaTitleType",
+      "relationshipName": "titleType",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "title_aka_title_type",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "angularJSSuffix": "graphqlDgs",
+  "changelogDate": "20211014163350"
+}
