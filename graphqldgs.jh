@@ -1,0 +1,110 @@
+entity Category {
+	categoryName String required maxlength(100)
+}
+
+entity ContentType {
+	contentTypeName String required maxlength(100)
+}
+
+entity Genre {
+	genreName String required maxlength(100)
+}
+
+entity Language {
+	languageName String maxlength(100)
+}
+
+entity Region {
+	regionName String maxlength(100)
+}
+
+entity Role {
+	roleName String required maxlength(100)
+}
+
+entity TitleType {
+	titleTypeName String required maxlength(100)
+}
+
+entity Title {
+	primaryTitle String required maxlength(500),
+    originalTitle String maxlength(500),
+    isAdult Boolean,
+    startYear Integer,
+    endYear Integer,
+    runtimeMinutes Integer
+}
+
+entity Talent {
+	talentName String required maxlength(500),
+    birthYear Integer,
+    deathYear Integer
+}
+
+entity TalentRole {
+    //TODO compositeId talent, role
+    ord Integer required
+}
+
+entity TalentTitle {
+    //TODO compositeId talent, title
+    title String required maxlength(20)
+}
+
+entity TitleAka {
+    //TODO compositeId title, ord
+    akaTitle String required maxlength(500),
+    additionalAttrs String maxlength(500),
+    isOriginalTitle Boolean
+}
+
+entity TitleGenre {
+    //TODO compositeId title, genre
+    ord Integer required
+}
+
+entity TitlePrincipal {
+    //TODO compositeId title, talent, ord
+    category Integer required,
+    job String maxlength(1000),
+    roleNames String maxlength(1000)
+}
+
+entity TitleAkaTitleType {
+    //TODO compositeId title, titleType, ord
+}
+
+entity TitleEpisode {
+    parentTitle String maxlength(20),
+    seasonNumber Integer,
+    episodeNumber Integer
+}
+
+relationship OneToOne {
+	Title{contentType} to ContentType,
+    TalentTitle{talent} to Talent,
+    TitleAka{region} to Region,
+    TitleAka{language} to Language,
+    TitleAkaTitleType{titleType} to TitleType
+}
+
+relationship OneToMany {
+  Talent{talentRole} to TalentRole{talent},
+  Title{titleGenre} to TitleGenre{title}
+}
+
+relationship ManyToOne {
+  TalentRole{role} to Role{talentRole},
+  TitleGenre{genre} to Genre{titleGenre}
+}
+
+// Set pagination options
+paginate Title, Talent with infinite-scroll
+paginate TitleEpisode with pagination
+
+dto * with mapstruct
+
+// Set service options to all 
+service all with serviceImpl except Category, Region, Language, ContentType, Genre, TitleType, Role
+// Set an angular suffix
+angularSuffix * with graphqlDgs
